@@ -5,7 +5,9 @@
         <button @click="generate">생성</button>
         </div>
         <div>
-            <div v-for="cypher in cyphers" :key="cypher.id"></div>
+            <div v-for="cypher in cyphers" :key="cypher.id">
+                {{ cypher.level }} {{ cypher.name }}
+            </div>
         </div>
     </div>
 </template>
@@ -25,7 +27,7 @@ function generateRandomCypher(number: number): Cypher[] {
 
     for (var i = 0; i < number; i++) {
         cyphers.push({
-            level: Math.random() % 8,
+            level: Math.floor(Math.random() * 9),
             id: uuidv4(),
             name: "",
             use: "",
