@@ -1,9 +1,7 @@
 <template>
-    <div>
-        <table>
-            
-        </table>
-    </div>
+  <div>
+    <table></table>
+  </div>
 </template>
 <script lang="ts">
 export default {};
