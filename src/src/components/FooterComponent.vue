@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer bg-base-300">
     <div>
       <p>
         This product is an independent production and is not affiliated with

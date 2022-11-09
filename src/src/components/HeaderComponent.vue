@@ -17,29 +17,23 @@
       <div />
       <div></div>
     </div>
+    <ThemeSelect />
   </div>
 </template>
-<script lang="ts">
+<script lang="ts" setup>
 import { translate } from "@/modules/translate.js";
-
-export default {
-  methods: {
-    translate(key: string) {
-      return translate(key);
-    },
-  },
-};
+import ThemeSelect from "./ThemeSelect.vue";
 </script>
 <style lang="scss">
 div.header {
-  background: #2a6268;
+  background: hsl(var(--p));
   padding: 5px;
   vertical-align: middle;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: auto auto 1fr auto;
+  display: flex;
+  gap: 1rem;
 }
 
 div.logo-wrapper {
@@ -59,7 +53,7 @@ div.header .title {
 div.header .title .text {
   font-family: "HeirofLightBold";
   font-size: 24px;
-  color: #ffffff;
+  color: hsl(var(--pc) / 1);
 }
 
 img.logo {

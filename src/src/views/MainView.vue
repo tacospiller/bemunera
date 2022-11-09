@@ -18,13 +18,11 @@ import RandomNameGenerator from "@/components/RandomNameGenerator.vue";
 import DifficultyTable from "@/components/DifficultyTable.vue";
 </script>
 <style lang="scss">
-$font-color: #585d86;
-
 div.content {
   height: auto;
-  min-height: calc(100vh - 9rem);
+  min-height: calc(100vh - 8rem);
   padding-bottom: 4rem;
-  background: #fafafa;
+  background: hsl(var(--b1));
 }
 
 div.content-body {
@@ -51,7 +49,7 @@ div.content-body {
 div.card {
   padding: 1rem;
   border-radius: 1rem;
-  background: #fcfcfc;
-  border: 2px solid #dedede;
+  background: hsl(var(--b2) / 0.1);
+  border: 2px solid hsl(var(--bc) / 0.1);
 }
 </style>

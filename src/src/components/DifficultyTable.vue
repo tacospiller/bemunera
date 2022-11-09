@@ -32,12 +32,7 @@ import { translate } from "@/modules/translate";
 import difficulties from "@/data/difficulty.json";
 </script>
 <style lang="scss">
-table.table tbody :where(th, td) {
-  border: 1px solid #d0d0d0;
-  padding: 0.5rem 1rem;
-}
-
 .table tbody tr:nth-child(even) :where(th, td) {
-  background-color: #fcfcfc;
+  background-color: hsl(var(--b3));
 }
 </style>
