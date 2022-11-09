@@ -1,0 +1,62 @@
+[
+    {
+        "difficulty": 1,
+        "title": "간단",
+        "dice": 3,
+        "description": "대부분의 사람이 할 수 있습니다."
+    },
+    {
+        "difficulty": 2,
+        "title": "보통",
+        "dice": 6,
+        "description": "보통의 사람이 할 수 있습니다."
+    },
+    {
+        "difficulty": 3,
+        "title": "까다로움",
+        "dice": 9,
+        "description": "대부분의 사람은 반반으로 성공합니다."
+    },
+    {
+        "difficulty": 4,
+        "title": "어려움",
+        "dice": 12,
+        "description": "익숙한 사람은 반반으로 성공합니다."
+    },
+    {
+        "difficulty": 5,
+        "title": "도전적",
+        "dice": 15,
+        "description": "익숙한 사람들도 종종 실패합니다."
+    },
+    {
+        "difficulty": 6,
+        "title": "모험적",
+        "dice": 18,
+        "description": "보통 사람들은 거의 성공하지 못합니다."
+    },
+    {
+        "difficulty": 7,
+        "title": "압도적",
+        "dice": 21,
+        "description": "적절한 기술이나 노력 없이는 불가능합니다."
+    },
+    {
+        "difficulty": 8,
+        "title": "영웅적",
+        "dice": 24,
+        "description": "여러 해 동안 이야기될 것입니다."
+    },
+    {
+        "difficulty": 9,
+        "title": "전설적",
+        "dice": 27,
+        "description": "오랜 시간 전설로 남을 것입니다."
+    },
+    {
+        "difficulty": 10,
+        "title": "불가능",
+        "dice": 30,
+        "description": "보통 사람들은 상상조차 하지 못합니다."
+    }
+]

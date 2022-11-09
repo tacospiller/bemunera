@@ -30,15 +30,19 @@ export default {
 };
 </script>
 <style lang="scss">
+$font-color: #585d86;
+
 div.view {
   height: 100vh;
 }
+
 div.content {
   height: auto;
   min-height: calc(100% - 60px);
   padding-bottom: 60px;
   background: #fafafa;
 }
+
 div.content-body {
   padding-top: 30px;
   padding-left: 10px;
@@ -46,5 +50,12 @@ div.content-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+}
+
+div.card {
+  padding: 20px;
+  border-radius: 10px;
+  background: #fcfcfc;
+  border: 1px solid #dedede;
 }
 </style>

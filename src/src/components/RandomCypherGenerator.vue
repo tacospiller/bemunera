@@ -1,5 +1,5 @@
 <template>
-  <div class="cypher-gen">
+  <div class="cypher-gen card">
     <div class="cypher-gen-header">
       <div class="title">{{ translate("GenerateRandomCypher") }}</div>
       <div />
@@ -71,13 +71,11 @@ export default {
 };
 </script>
 <style lang="scss">
+$font-color: #585d86;
+
 div.cypher-gen {
-  color: #585d86;
+  color: $font-color;
   font-size: 16px;
-  padding: 20px;
-  border-radius: 10px;
-  background: #fcfcfc;
-  border: 1px solid #dedede;
 }
 
 div.cypher-gen .cypher-gen-header {

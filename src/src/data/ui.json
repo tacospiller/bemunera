@@ -2,5 +2,11 @@
     "Title": "사이퍼 시스템 GM을 위한 도우미",
     "GenerateRandomCypher": "무작위 사이퍼 생성",
     "Generate": "생성",
-    "Level": "레벨"
+    "Level": "레벨",
+    "Difficulty": "난이도",
+    "DifficultyTitle": "제목",
+    "DifficultyRequirement": "주사위 요구치",
+    "DifficultyDesc": "설명",
+    "DifficultyTable": "난이도 일람",
+    "GenerateRandomName": "무작위 이름 생성"
 }
