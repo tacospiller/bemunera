@@ -15,7 +15,7 @@
     <div />
     <div class="twitter">
       <div />
-      <div><a href="https://twitter.com/dogitbem">Twitter@dogitbem</a></div>
+      <div></div>
     </div>
   </div>
 </template>
@@ -60,17 +60,6 @@ div.header .title .text {
   font-family: "HeirofLightBold";
   font-size: 24px;
   color: #ffffff;
-}
-
-div.header .twitter {
-  display: grid;
-  grid-template-rows: 1fr auto;
-}
-
-div.header .twitter a {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 14px;
-  text-decoration: none;
 }
 
 img.logo {

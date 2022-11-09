@@ -10,11 +10,15 @@
         <th>{{ translate("DifficultyRequirement") }}</th>
         <th>{{ translate("DifficultyDesc") }}</th>
       </tr>
-      <tr v-for="difficulty, i in difficulties" :key="difficulty.difficulty">
-        <td :class="i % 2 == 0 ? 'colored' : ''">{{ difficulty.difficulty }}</td>
+      <tr v-for="(difficulty, i) in difficulties" :key="difficulty.difficulty">
+        <td :class="i % 2 == 0 ? 'colored' : ''">
+          {{ difficulty.difficulty }}
+        </td>
         <td :class="i % 2 == 0 ? 'colored' : ''">{{ difficulty.title }}</td>
         <td :class="i % 2 == 0 ? 'colored' : ''">{{ difficulty.dice }}</td>
-        <td :class="i % 2 == 0 ? 'colored' : ''">{{ difficulty.description }}</td>
+        <td :class="i % 2 == 0 ? 'colored' : ''">
+          {{ difficulty.description }}
+        </td>
       </tr>
     </table>
   </div>
@@ -26,14 +30,14 @@ import Difficulties from "@/data/difficulty.json";
 export default {
   data: () => {
     return {
-      difficulties: Difficulties
+      difficulties: Difficulties,
     };
   },
   methods: {
     translate(key: string): string {
       return translate(key);
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss">
