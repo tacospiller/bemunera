@@ -15,9 +15,10 @@
 </template>
 <script lang="ts">
 import { translate } from "@/modules/translate.js";
+import { generateRandomNameKor } from "@/modules/random-name-kor";
 
 function generateRandomName(): string {
-    return "random name";
+    return generateRandomNameKor();
 }
 
 export default {
