@@ -19,7 +19,7 @@
 <style lang="scss">
 .footer {
   padding: 1rem;
-  height: 8rem;
+  min-height: 8rem;
 }
 
 img.logo-img {
