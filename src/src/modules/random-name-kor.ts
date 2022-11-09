@@ -48,9 +48,9 @@ function randomAssembly(count: number): string[] {
 
     for (var i = 1; i < count; i++) {
         syllables.push({
-            consonant: pick(CONSONANTS[syllables[i - 1].consonant]),
-            vowel: pick(VOWELS[syllables[i - 1].vowel]),
-            lowerConsonant: Math.random() > 0.7 ? pick(LOWER_CONSONANTS) : null
+            consonant: pick((CONSONANTS as any)[syllables[i - 1].consonant]),
+            vowel: pick((VOWELS as any)[syllables[i - 1].vowel]),
+            lowerConsonant: Math.random() > 0.8 ? pick(LOWER_CONSONANTS) : null
         });
     }
 
@@ -58,7 +58,7 @@ function randomAssembly(count: number): string[] {
     for (var i = 0; i < syllables.length; i++) {
         arr.push(syllables[i].consonant, syllables[i].vowel);
         if (syllables[i].lowerConsonant) {
-            arr.push(syllables[i].lowerConsonant);
+            arr.push(syllables[i].lowerConsonant as string);
         }
     }
 

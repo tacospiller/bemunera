@@ -3,13 +3,16 @@
         <div class="name-gen-header">
             <div class="title">{{ translate("GenerateRandomName") }}</div>
             <div />
+            <input type="number" v-model="number" min="1" max="20" class="input-number" />
             <button @click="generate" class="button">
                 {{ translate("Generate") }}
             </button>
             <div />
         </div>
-        <div>
-            {{ name }}
+        <div class="names">
+            <div v-for="name, i in names" :key="i">
+                {{ name }}
+            </div>
         </div>
     </div>
 </template>
@@ -17,19 +20,24 @@
 import { translate } from "@/modules/translate.js";
 import { generateRandomNameKor } from "@/modules/random-name-kor";
 
-function generateRandomName(): string {
-    return generateRandomNameKor();
+function generateRandomName(count: number): string[] {
+    var names = [];
+    for (var i = 0; i < count; i++) {
+        names.push(generateRandomNameKor());
+    }
+    return names;
 }
 
 export default {
-    data: (): { name: string | null; } => {
+    data: (): { names: string[]; number: number;  } => {
         return {
-            name: null
+            names: [],
+            number: 10
         };
     },
     methods: {
         generate() {
-            this.name = generateRandomName();
+            this.names = generateRandomName(this.number);
         },
         translate(key: string) {
             return translate(key);
@@ -54,5 +62,10 @@ div.name-gen .name-gen-header {
 
 div.name-gen .title {
     font-weight: bold;
+}
+
+div.name-gen .names {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 </style>
