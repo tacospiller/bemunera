@@ -10,7 +10,7 @@
         max="10"
         class="input-number"
       />
-      <button @click="generate" class="button">
+      <button @click="generate" class="btn btn-primary btn-sm">
         {{ translate("Generate") }}
       </button>
       <div />
@@ -98,16 +98,5 @@ input.input-number {
   border: none;
   border-bottom: 1px solid #585d86;
   background: transparent;
-}
-button.button {
-  border: none;
-  border-radius: 5px;
-  padding: 5px 8px;
-  background: #3a8891;
-  color: white;
-}
-
-button.button:active {
-  background: #2a6268;
 }
 </style>
