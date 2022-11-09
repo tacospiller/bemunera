@@ -125,13 +125,13 @@ function changeTheme(themeId: ThemeIdT): void {
   localStorage.setItem("theme", themeId);
 }
 
-changeTheme(localStorage.getItem("theme") || "garden");
+changeTheme((localStorage.getItem("theme") as ThemeIdT) || "garden");
 </script>
 
 <template>
   <div title="Change Theme" class="dropdown dropdown-end">
     <div tabindex="0" class="btn btn-primary gap-1 normal-case">
-      <span class="hidden md:inline"> 테마 바꾸기 </span>
+      <span class="hidden sm:inline"> 테마 바꾸기 </span>
     </div>
     <div
       class="dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px max-h-96 h-[70vh] w-52 overflow-y-auto shadow-2xl"
