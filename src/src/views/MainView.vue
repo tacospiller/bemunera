@@ -1,61 +1,55 @@
 <template>
-  <div class="view">
-    <div class="content">
-      <HeaderComponent />
-      <div class="content-body">
-        <RandomCypherGenerator />
-        <DifficultyTable />
-        <RandomNameGenerator />
-      </div>
+  <div class="content">
+    <HeaderComponent />
+    <div class="content-body">
+      <DifficultyTable />
+      <RandomCypherGenerator />
+      <RandomNameGenerator />
     </div>
-    <FooterComponent />
   </div>
+  <FooterComponent />
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
 import RandomCypherGenerator from "@/components/RandomCypherGenerator.vue";
 import RandomNameGenerator from "@/components/RandomNameGenerator.vue";
 import DifficultyTable from "@/components/DifficultyTable.vue";
-
-export default {
-  components: {
-    RandomCypherGenerator,
-    RandomNameGenerator,
-    DifficultyTable,
-    HeaderComponent,
-    FooterComponent,
-  },
-};
 </script>
 <style lang="scss">
-$font-color: #585d86;
-
-div.view {
-  height: 100vh;
-}
-
 div.content {
   height: auto;
-  min-height: calc(100% - 60px);
-  padding-bottom: 60px;
-  background: #fafafa;
+  min-height: calc(100vh - 8rem);
+  padding-bottom: 4rem;
+  background: hsl(var(--b1));
 }
 
 div.content-body {
-  padding-top: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  div.content-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1536px) {
+  div.content-body {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 div.card {
-  padding: 20px;
-  border-radius: 10px;
-  background: #fcfcfc;
-  border: 1px solid #dedede;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: hsl(var(--b2) / 0.1);
+  border: 2px solid hsl(var(--bc) / 0.1);
 }
 </style>
