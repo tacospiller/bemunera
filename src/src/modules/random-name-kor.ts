@@ -38,13 +38,11 @@ const HEADS = [
   "던ㄴ",
   "번ㄴ",
   "턴ㄴ",
-  "헌ㄴ",
   "걸ㄹ",
   "덜ㄹ",
   "벌ㄹ",
   "펄ㄹ",
   "언ㄴ",
-  "언",
   "얼ㄹ",
   "엄ㅁ",
   "도",
@@ -77,6 +75,7 @@ const HEADS = [
   "쿠",
   "투",
   "후",
+  "우",
   "둘ㄹ",
   "물ㄹ",
   "술ㄹ",
@@ -100,6 +99,16 @@ const HEADS = [
   "테",
   "페",
   "헤",
+  "겔",
+  "넬",
+  "델",
+  "멜",
+  "벨",
+  "엘",
+  "셀",
+  "켈",
+  "텔",
+  "펠",
   "겔ㄹ",
   "넬ㄹ",
   "델ㄹ",
@@ -126,8 +135,30 @@ const HEADS = [
   "텐ㄴ",
   "펜ㄴ",
   "헨ㄴ",
+  "기",
+  "디",
+  "미",
+  "티",
+  "비",
+  "시",
+  "이",
+  "키",
+  "길ㄹ",
+  "딜ㄹ",
+  "밀ㄹ",
+  "틸ㄹ",
+  "실ㄹ",
+  "일ㄹ",
+  "킬ㄹ",
+  "길",
+  "딜",
+  "밀",
+  "틸",
+  "실",
+  "일",
+  "킬",
 ];
-const BODIES = ["", "ㅏ", "ㅣ", "ㅔ", "ㅗ", "ㅜ", "ㅣㄹ", "ㅏㄹ", "ㅗㄹ"];
+const BODIES = ["", "ㅏ", "ㅣ", "ㅔ", "ㅗ", "ㅜ"];
 const TAILS = [
   "스",
   "ㅗ스",
@@ -142,6 +173,7 @@ const TAILS = [
   "ㅗㅁ",
   "ㅣ르",
   "ㅏ",
+  "ㅗ",
   "ㅣ아",
   "ㅜㅁ",
   "ㅏㅁ",
@@ -157,6 +189,8 @@ const TAILS = [
   "ㄹ로",
   "ㅔㄹ",
   "ㅗㄹ",
+  "ㅔㄴ",
+  "ㅣ",
 ];
 
 const VOWELS = [
@@ -186,32 +220,32 @@ function pick<T>(arr: T[]): T {
 
 function randomAssembly(): string[] {
   const head = Hangul.disassemble(pick(HEADS));
+  const head2 = Math.random() > 0.8 ? Hangul.disassemble(pick(HEADS)) : [];
   const body = Hangul.disassemble(pick(BODIES));
   const tail = Hangul.disassemble(pick(TAILS));
-  const syllables = [...head, ...body, ...tail];
+  const syllables = [...head, ...body, ...head2, ...tail];
 
   for (let i = 0; i < syllables.length - 1 && i < 15; ) {
     if (
       i > 0 &&
-      !VOWELS.includes(syllables[i]) &&
+      !VOWELS.includes(syllables[i - 1]) &&
       !VOWELS.includes(syllables[i]) &&
       !VOWELS.includes(syllables[i + 1])
     ) {
       syllables.splice(i, 1);
-      continue;
-    }
-    if (VOWELS.includes(syllables[i]) && VOWELS.includes(syllables[i + 1])) {
+    } else if (
+      VOWELS.includes(syllables[i]) &&
+      VOWELS.includes(syllables[i + 1])
+    ) {
       if (syllables[i] === syllables[i + 1]) {
         syllables.splice(i + 1, 1);
-        continue;
       } else {
         syllables.splice(i + 1, 0, "ㅇ");
         i += 1;
-        continue;
       }
+    } else {
+      i += 1;
     }
-    i += 1;
-    continue;
   }
 
   return syllables;
