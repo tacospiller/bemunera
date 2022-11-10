@@ -37,12 +37,11 @@ div.content-body {
 }
 
 @media (max-width: 1024px) {
-  div.resize-wrapper {
-    min-width: 600px;
-  }
-
   div.content-body {
     grid-template-columns: 1fr;
+    padding-top: 1.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 

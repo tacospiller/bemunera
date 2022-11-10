@@ -12,11 +12,6 @@
       </div>
       <div />
     </div>
-    <div />
-    <div class="twitter">
-      <div />
-      <div></div>
-    </div>
     <ThemeSelect />
   </div>
 </template>

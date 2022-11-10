@@ -7,8 +7,8 @@
       <thead>
         <tr>
           <th>{{ translate("Difficulty") }}</th>
-          <th>{{ translate("DifficultyTitle") }}</th>
-          <th>{{ translate("DifficultyRequirement") }}</th>
+          <th class="hide-mobile">{{ translate("DifficultyTitle") }}</th>
+          <th class="hide-mobile">{{ translate("DifficultyRequirement") }}</th>
           <th>{{ translate("DifficultyDesc") }}</th>
         </tr>
       </thead>
@@ -17,8 +17,8 @@
           <td>
             {{ difficulty.difficulty }}
           </td>
-          <td>{{ difficulty.title }}</td>
-          <td>{{ difficulty.dice }}</td>
+          <td class="hide-mobile">{{ difficulty.title }}</td>
+          <td class="hide-mobile">{{ difficulty.dice }}</td>
           <td>
             {{ difficulty.description }}
           </td>
@@ -32,6 +32,12 @@ import { translate } from "@/modules/translate";
 import difficulties from "@/data/difficulty.json";
 </script>
 <style lang="scss">
+@media (max-width: 1024px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
 .table tbody tr:nth-child(even) :where(th, td) {
   background-color: hsl(var(--b3));
 }

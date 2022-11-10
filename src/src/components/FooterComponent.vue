@@ -13,13 +13,16 @@
         of Monte Cook Games, LLC.
       </p>
     </div>
-    <img src="@/assets/cypher-system-logo.png" class="logo-img" />
+    <div class="footer-logo-wrapper">
+      <img src="@/assets/cypher-system-logo.png" class="logo-img" />
+    </div>
   </footer>
 </template>
 <style lang="scss">
 .footer {
   padding: 1rem;
   min-height: 8rem;
+  justify-content: space-between;
 }
 
 img.logo-img {
