@@ -47,7 +47,6 @@ generate();
 </script>
 
 <style lang="scss">
-
 div.name-gen {
   color: hsl(var(--bc));
   font-size: 16px;
