@@ -1,13 +1,15 @@
 <template>
-  <div class="content">
-    <HeaderComponent />
-    <div class="content-body">
-      <DifficultyTable />
-      <RandomCypherGenerator />
-      <RandomNameGenerator />
+  <div class="resize-wrapper">
+    <div class="content">
+      <HeaderComponent />
+      <div class="content-body">
+        <DifficultyTable />
+        <RandomCypherGenerator />
+        <RandomNameGenerator />
+      </div>
     </div>
+    <FooterComponent />
   </div>
-  <FooterComponent />
 </template>
 
 <script lang="ts" setup>
@@ -35,6 +37,10 @@ div.content-body {
 }
 
 @media (max-width: 1024px) {
+  div.resize-wrapper {
+    min-width: 600px;
+  }
+
   div.content-body {
     grid-template-columns: 1fr;
   }
