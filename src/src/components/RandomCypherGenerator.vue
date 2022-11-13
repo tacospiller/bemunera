@@ -58,7 +58,7 @@ function generateRandomCypher(number: number): Cypher[] {
 }
 
 const cyphers = ref([] as Cypher[]);
-const number = ref(10);
+const number = ref(5);
 
 function generate() {
   cyphers.value = generateRandomCypher(number.value);
