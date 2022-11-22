@@ -8,5 +8,6 @@
     "DifficultyRequirement": "주사위 요구치",
     "DifficultyDesc": "설명",
     "DifficultyTable": "난이도 일람",
-    "GenerateRandomName": "무작위 이름 생성"
+    "GenerateRandomName": "무작위 이름 생성",
+    "ExcludeMachineTranslation": "기계번역 제외"
 }
