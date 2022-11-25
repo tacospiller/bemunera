@@ -4,13 +4,6 @@
       <label class="text-lg font-bold" for="cypher-count-input">
         {{ translate("GenerateRandomCypher") }}
       </label>
-      {{ translate("ExcludeMachineTranslation") }}
-      <input
-        id="cypher-exclude-machine-tr"
-        type="checkbox"
-        v-model="excludeMachineTrans"
-        class="checkbox"
-      />
       <input
         id="cypher-count-input"
         type="number"
@@ -32,8 +25,7 @@
           class="cypher-list"
           :title="cypher.originalText"
         >
-          {{ cypher.level }}{{ translate("Level") }} {{ cypher.name }} -
-          {{ cypher.effect }}
+          {{ toText(cypher) }}
         </li>
       </ul>
       <button type="button" class="btn btn-secondary btn-sm" @click="copy">
@@ -43,51 +35,30 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { v4 as uuidv4 } from "uuid";
-import CypherTemplates from "@/data/cyphers.json";
 import { translate } from "@/modules/translate.js";
 import { ref } from "vue";
-
-interface Cypher {
-  level: number;
-  id: string;
-  name: string;
-  effect: string;
-  originalText: string | undefined;
-}
-
-function generateRandomCypher(number: number): Cypher[] {
-  const templates = excludeMachineTrans.value
-    ? CypherTemplates.filter((x) => !x.machinetranslated)
-    : CypherTemplates;
-  return Array.from({ length: number }, () => {
-    const idx = Math.floor(Math.random() * templates.length);
-    const template = templates[idx];
-    const level = Math.floor(Math.random() * 6) + template.defaultLevel;
-    return {
-      level,
-      id: uuidv4(),
-      name: template.name,
-      effect: template.effect.replace(/\{level\}/g, level.toString()),
-      originalText: template.originalText,
-    };
-  });
-}
+import { generateRandomCypher } from "@/modules/cypher-generator";
+import type { Cypher } from "@/modules/cypher-generator";
 
 const cyphers = ref([] as Cypher[]);
 const number = ref(5);
-const excludeMachineTrans = ref(true);
 
 function generate() {
-  cyphers.value = generateRandomCypher(number.value);
+  cyphers.value = generateRandomCypher(true, number.value);
 }
 
 generate();
 
+function toText(cypher: Cypher): string {
+  return `${cypher.level}${translate("Level")} ${cypher.exterior} - ${
+    cypher.effect
+  }`;
+}
+
 function copy() {
   const cyphersAsText = cyphers.value
-    .map(({ level, name, effect }) => {
-      return `${level}${translate("Level")} ${name} - ${effect}`;
+    .map((cypher) => {
+      return toText(cypher);
     })
     .join("\n");
   navigator.clipboard.writeText(cyphersAsText);
