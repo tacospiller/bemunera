@@ -50,9 +50,9 @@ function generate() {
 generate();
 
 function toText(cypher: Cypher): string {
-  return `${cypher.level}${translate("Level")} ${cypher.exterior} - ${
-    cypher.effect
-  }`;
+  return `${cypher.level}${translate("Level")} ${cypher.name}(${
+    cypher.exterior
+  }) - ${cypher.effect}`;
 }
 
 function copy() {

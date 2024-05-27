@@ -5,6 +5,7 @@ import CypherExt from "@/data/cypherexterior.json";
 export interface Cypher {
   level: number;
   id: string;
+  name: string;
   exterior: string;
   effect: string;
   originalText: string | undefined;
@@ -35,6 +36,7 @@ export function generateRandomCypher(
     return {
       level,
       id: uuidv4(),
+      name: template.name,
       exterior: generateExterior(),
       effect: template.effect.replace(/\{level\}/g, level.toString()),
       originalText: template.originalText,
